@@ -13,3 +13,18 @@ Predicting individual income from demographic and employment census data is a cl
 ## 💻 Tech Stack
 * **Language:** Python
 * **Libraries & Frameworks:** Scikit-learn, Pandas, NumPy, Matplotlib, Seaborn, tensorflow.keras, scipy.stats, time
+## 📊 Dataset
+This project utilizes the **Adult (Census Income)** dataset donated to the UCI Machine Learning Repository. 
+
+While raw data files have been omitted from this repository to maintain clean version control, you can access, explore, or download the dataset directly from the [UCI Machine Learning Repository - Adult Dataset Page](https://archive.ics.uci.edu/dataset/2/adult).
+
+### Programmatic Data Fetching
+Rather than storing static data files, the accompanying Python scripts dynamically fetch the dataset using the official repository package:
+
+```python
+from ucimlrepo import fetch_ucirepo 
+
+# Fetch dataset programmatically
+adult = fetch_ucirepo(id=2) 
+X = adult.data.features 
+y = adult.data.targets
